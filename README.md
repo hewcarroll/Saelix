@@ -1,131 +1,179 @@
-# Saelix - Professional AI Research Website
+# 🌍 Saelix - Infrastructure Management Platform
 
-A modern, professional website for the Saelix Institute built with React, TypeScript, and Vite.
+**Saelix Slate** is an enterprise-grade, unified GIS and fleet management platform designed for water utilities, municipalities, and infrastructure operators.
 
-## 🎯 Features
+## 🎯 What is Saelix Slate?
 
-- **Professional Design** - Clean, minimal design inspired by Nvidia, AMD, and Intel
-- **Fast Performance** - Optimized React + Vite for quick page loads
-- **Responsive** - Fully mobile-responsive design
-- **TypeScript** - Full type safety across the codebase
-- **SEO Ready** - Semantic HTML and optimized metadata
+A comprehensive platform that combines:
+- **GIS Asset Management** - Interactive mapping and real-time status of infrastructure
+- **CCTV Inspection Management** - Defect tracking and photo galleries
+- **Work Order Automation** - Auto-generated from inspection findings
+- **Fleet Operations** - Crew scheduling, dispatch, and performance tracking
+- **Compliance Reporting** - Regulatory documentation and audit trails
+- **AI-Powered Analytics** - Gemini integration for intelligent insights
 
-## 📄 Pages
+## 🏗️ Tech Stack
 
-1. **Home** - Professional landing page with features and product preview
-2. **Saelix Slate** - Product page with detailed specifications and use cases
+**Frontend:**
+- React 19.2.1
+- TypeScript
+- Tailwind CSS / Custom CSS
+- React Router
+- Lucide Icons
 
-## 🚀 Quick Start
+**Backend:**
+- FastAPI (Python)
+- Jinja2
+- SQLAlchemy
+
+## 📋 8 Core Modules
+
+1. **Dashboard** - Real-time KPI overview and critical alerts
+2. **GIS Map** - Interactive mapping with asset visualization and editing
+3. **Inspections** - CCTV inspection records and defect management
+4. **Work Orders** - Job creation, assignment, and tracking
+5. **Scheduling** - Crew availability and shift planning
+6. **Inventory** - Materials and parts tracking
+7. **Reports** - Custom reporting and compliance documentation
+8. **Analytics** - Advanced metrics and predictive analysis
+
+## 🎯 Target Market
+
+- Municipal Water Departments
+- Sewer Utilities
+- Stormwater Management Agencies
+- Wastewater Treatment Operators
+- Infrastructure Consulting Firms
+- Private Contractors
+
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 16+
 - npm or yarn
 
 ### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/hewcarroll/Saelix.git
+cd Saelix
+
 # Install dependencies
 npm install
 
 # Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ```
+
+The application will be available at `http://localhost:5173`
 
 ## 📁 Project Structure
 
 ```
 Saelix/
-├── components/
-│   ├── Navigation.tsx      # Top navigation bar
-│   ├── Hero.tsx            # Hero section component
-│   ├── Features.tsx        # Features grid
-│   ├── ProductPreview.tsx  # Product showcase
-│   └── Footer.tsx          # Footer section
-├── pages/
-│   ├── Home.tsx            # Landing page
-│   └── SaelixSlate.tsx     # Product page
-├── App.tsx                 # Main app component
-├── index.tsx               # React entry point
-├── styles.css              # Global styles
-├── constants.ts            # Site data and configuration
-├── types.ts                # TypeScript interfaces
-└── package.json            # Dependencies
+├── components/          # Reusable UI components
+├── pages/              # Feature modules (Home, SaelixSlate)
+├── constants.ts        # Product and configuration data
+├── types.ts            # TypeScript interfaces
+├── styles.css          # Global and component styles
+├── App.tsx             # Main application component
+└── README.md           # This file
+```
+
+## 🔐 Security & Compliance
+
+### Role-Based Access Control
+- **Administrator** - Full system access
+- **Operator** - Field operations (Map, Inspections, Work Orders, Inventory)
+- **QA Reviewer** - Quality assurance (Inspections, Reports, Analytics)
+- **Client Viewer** - Read-only stakeholder access
+
+### Compliance Standards
+- NASSCO (National Association of Sewer Service Companies)
+- EPA regulations
+- OSHA safety certifications
+- State/local utility requirements
+
+## 📊 Data Models
+
+### Key Entities
+- **Inspections** - CCTV inspection records with defect tracking
+- **Work Orders** - Repair/maintenance jobs with priority levels
+- **Assets** - Infrastructure items (Manholes, Pipes, Laterals) with GIS coordinates
+- **Employees** - Field crew members with certifications
+- **Inventory** - Parts and materials with stock tracking
+- **Tasks** - Subtasks within work orders for checklist management
+- **Notifications** - Real-time alerts and status updates
+
+## 🔄 Workflow
+
+```
+Field Inspection
+     ↓
+Upload to Saelix Slate
+     ↓
+QA Review & AI Analysis
+     ↓
+Auto-Generate Work Orders
+     ↓
+Dispatch to Crews
+     ↓
+Execution & Tracking
+     ↓
+Compliance Reporting
 ```
 
 ## 🎨 Design System
 
-### Color Palette
-- **Primary Blue**: `#0066CC`
-- **Dark Text**: `#111827`
-- **Secondary Text**: `#6B7280`
-- **Light Background**: `#F3F4F6`
-- **Accent Green**: `#10B981`
+### Colors
+- **Primary:** #0066CC (Professional Blue)
+- **Text Primary:** #111827 (Dark Gray)
+- **Text Secondary:** #6B7280 (Medium Gray)
+- **Background:** #FFFFFF (White)
+- **Accent:** #10B981 (Success Green)
 
 ### Typography
-- **Font Family**: System fonts (-apple-system, BlinkMacSystemFont, Segoe UI, Roboto)
-- **Headings**: Bold (700), tight line-height
-- **Body**: Regular (400), normal line-height
+- **Font:** System fonts (-apple-system, Segoe UI, etc.)
+- **Sizes:** 12px - 40px (scalable)
+- **Weights:** 400, 500, 600, 700
 
-### Spacing & Sizing
-- Base unit: 8px
-- Sizes: xs (4px), sm (8px), md (16px), lg (24px), xl (32px), 2xl (48px), 3xl (64px)
+## 📱 Responsive Design
 
-## 🔧 Configuration
+- **Desktop** (> 1024px) - Full featured layouts
+- **Tablet** (768px - 1024px) - Optimized 2-column layouts
+- **Mobile** (< 768px) - Single column, touch-friendly
 
-Edit `constants.ts` to update:
-- Company information
-- Product details (Saelix Slate)
-- Features and benefits
-- Use cases
+## 🚀 Deployment
 
-```typescript
-export const COMPANY_INFO = {
-  name: 'Saelix',
-  tagline: 'Advanced AI Research & Development',
-  description: '...',
-  contactEmail: 'collaborate@saelix.org'
-};
-```
-
-## 📦 Dependencies
-
-- **react** ^19.2.1 - UI framework
-- **react-dom** ^19.2.1 - DOM rendering
-- **lucide-react** ^0.559.0 - Icon library
-- **typescript** ~5.8.2 - Type checking
-- **vite** ^6.2.0 - Build tool
-
-## 🌐 Deployment
-
-### GitHub Pages
-
+### Build for Production
 ```bash
-# Build the site
 npm run build
-
-# Push the dist folder to GitHub Pages
-git add dist/
-git commit -m "Deploy site"
-git push origin main
 ```
 
-### Custom Domain
-
-Update `CNAME` file with your domain:
-```
-saelix.org
+### Deploy to GitHub Pages
+```bash
+npm run deploy
 ```
 
-## 📝 License
+## 📚 Documentation
 
-Copyright © 2025 Saelix Institute. All rights reserved.
+See the following for more information:
+- [Saelix Slate Analysis](./SAELIX_SLATE_ANALYSIS.md) - Comprehensive product overview
+- [Update Summary](./UPDATE_SUMMARY.md) - Recent website updates
 
-## 📧 Contact
+## 🤝 Contributing
 
-For inquiries: collaborate@saelix.org
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 📞 Contact
+
+For inquiries about Saelix Slate, please contact: collaborate@saelix.org
+
+---
+
+**Saelix Slate** - Transforming Infrastructure Operations 🚀
