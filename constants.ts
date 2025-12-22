@@ -1,77 +1,71 @@
-import { Product, Paper } from './types';
+import { Feature } from './types';
 
-export const PRODUCTS: Product[] = [
+export const COMPANY_INFO = {
+  name: 'Saelix',
+  tagline: 'Advanced AI Research & Development',
+  description: 'Building ethical, coherent AI systems for enterprise applications.',
+  contactEmail: 'collaborate@saelix.org',
+  founded: 2023
+};
+
+export const HOME_PAGE_FEATURES: Feature[] = [
   {
-    id: 'p1',
-    name: 'Aether Lens',
-    tagline: 'Ethical Bias Detection & Correction',
-    description: 'A robust analysis tool for large language models that visualizes and corrects semantic bias in real-time, ensuring alignment with Coherology principles.',
-    version: '2.4.1',
-    downloadUrl: '#',
-    features: ['Real-time Sentiment Mapping', 'Bias Vector Visualization', 'Coherence Score Integration'],
-    icon: 'search'
+    icon: 'zap',
+    title: 'High Performance',
+    description: 'Enterprise-grade AI systems optimized for speed and reliability.'
   },
   {
-    id: 'p2',
-    name: 'Coherent Flow',
-    tagline: 'Workflow Optimization for Research Teams',
-    description: 'A collaborative platform designed to synchronize research efforts across distributed teams using predictive coherence modeling.',
-    version: '1.0.8',
-    downloadUrl: '#',
-    features: ['Node-based Logic Streams', 'Encrypted Data Sharing', 'Automated Citation Management'],
-    icon: 'share-2'
+    icon: 'shield',
+    title: 'Ethical AI',
+    description: 'Built on principles of transparency, safety, and responsible innovation.'
   },
   {
-    id: 'p3',
-    name: 'Saelix Core',
-    tagline: 'Foundational AI Framework',
-    description: 'The open-source kernel powering all Saelix applications. Build your own tools upon the principles of ethical computing.',
-    version: '0.9.5-beta',
-    downloadUrl: '#',
-    features: ['Modular Architecture', 'Python & Rust Bindings', 'Low-latency Inference Engine'],
-    icon: 'cpu'
+    icon: 'layers',
+    title: 'Scalable Architecture',
+    description: 'Flexible solutions that grow with your organization\'s needs.'
   }
 ];
 
-export const PAPERS: Paper[] = [
-  {
-    id: 'w1',
-    title: 'Foundations of Coherology: Unifying Synthetic and Organic Intelligence',
-    author: 'Dr. Aris Thorne',
-    date: '2023-11-15',
-    category: 'Coherology',
-    abstract: 'An introduction to the fundamental axioms of Coherology, exploring how resonant frequencies in information processing can bridge the gap between biological cognition and artificial neural networks.',
-  },
-  {
-    id: 'w2',
-    title: 'Ethical Alignment in High-Parameter Models',
-    author: 'Saelix Research Team',
-    date: '2024-02-10',
-    category: 'Ethics',
-    abstract: 'A comparative study on reinforcement learning from human feedback (RLHF) versus Constitutional AI, proposing a third path based on Coherence Theory.',
-  },
-  {
-    id: 'w3',
-    title: 'Quantum Coherence in Neuromorphic Chips',
-    author: 'L. V. Chen',
-    date: '2024-05-22',
-    category: 'Systems',
-    abstract: 'Investigating the potential for quantum tunneling effects to improve energy efficiency in next-generation hardware tailored for Coherology-based models.',
-  },
-  {
-    id: 'w4',
-    title: 'The Mirror Protocol: Reflective Safety Mechanisms',
-    author: 'Sarah Jenkins',
-    date: '2023-08-30',
-    category: 'Ethics',
-    abstract: 'Defining a safety protocol where AI systems must simulate the potential social impact of an output before generation, effectively creating a "conscience" loop.',
-  },
-  {
-    id: 'w5',
-    title: 'Harmonic Data Structures',
-    author: 'Dr. Aris Thorne',
-    date: '2024-01-12',
-    category: 'Coherology',
-    abstract: 'Redefining database architecture to prioritize relationship integrity and semantic resonance over traditional indexing methods.',
-  }
-];
+export const SAELIX_SLATE = {
+  name: 'Saelix Slate',
+  version: '1.0.0',
+  releaseDate: '2025-Q1',
+  tagline: 'Enterprise-Grade AI Application Platform',
+  description: 'A comprehensive platform for deploying and managing AI applications at scale. Built for teams that demand performance, security, and reliability.',
+  features: [
+    'Real-time data processing and inference',
+    'Advanced model deployment and versioning',
+    'Enterprise-grade security and compliance',
+    'Scalable distributed architecture',
+    'Comprehensive monitoring and analytics',
+    'Team collaboration tools'
+  ],
+  keyBenefits: [
+    'Reduce deployment time from weeks to days',
+    'Scale AI workloads without operational overhead',
+    'Ensure model performance and reliability in production',
+    'Maintain security and compliance standards'
+  ],
+  useCases: [
+    'Real-time recommendation engines',
+    'Predictive analytics for business intelligence',
+    'Natural language processing applications',
+    'Computer vision at scale',
+    'Time-series forecasting',
+    'Custom model deployment'
+  ]
+};
+
+export const FOOTER_LINKS = {
+  product: [
+    { label: 'Saelix Slate', href: '/saelix-slate' }
+  ],
+  company: [
+    { label: 'About', href: '#' },
+    { label: 'Contact', href: `mailto:${COMPANY_INFO.contactEmail}` }
+  ],
+  legal: [
+    { label: 'Privacy', href: '#' },
+    { label: 'Terms', href: '#' }
+  ]
+};
