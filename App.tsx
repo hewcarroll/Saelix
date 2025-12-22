@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import SaelixSlate from './pages/SaelixSlate';
 import { PageView } from './types';
+
+// Lazy load pages for code splitting
+const Home = lazy(() => import('./pages/Home'));
+const SaelixSlate = lazy(() => import('./pages/SaelixSlate'));
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div style={{ 
+    display: 'flex', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    minHeight: '400px',
+    fontSize: '18px',
+    color: '#6B7280'
+  }}>
+    Loading...
+  </div>
+);
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageView>('home');
@@ -23,7 +39,9 @@ const App: React.FC = () => {
     <div className="app">
       <Navigation currentPage={currentPage} setPage={setCurrentPage} />
       <main className="main-content">
-        {renderPage()}
+        <Suspense fallback={<LoadingFallback />}>
+          {renderPage()}
+        </Suspense>
       </main>
       <Footer />
     </div>
