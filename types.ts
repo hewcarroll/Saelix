@@ -1,29 +1,13 @@
-export interface Product {
-  id: string;
-  name: string;
-  tagline: string;
-  description: string;
-  version: string;
-  downloadUrl: string;
-  features: string[];
+export interface Feature {
   icon: string;
-}
-
-export interface Paper {
-  id: string;
   title: string;
-  author: string;
-  date: string;
-  abstract: string;
-  category: 'Coherology' | 'Ethics' | 'Systems' | 'Philosophy';
-  content?: string; // Full content simulated
-  downloadUrl?: string;
+  description: string;
 }
 
-export interface ChatMessage {
-  role: 'user' | 'model';
-  text: string;
-  isError?: boolean;
+export interface SaelixSlateSpec {
+  version: string;
+  releaseDate: string;
+  features: string[];
 }
 
-export type PageView = 'home' | 'products' | 'wiki' | 'about' | 'contact';
+export type PageView = 'home' | 'saelix-slate';
