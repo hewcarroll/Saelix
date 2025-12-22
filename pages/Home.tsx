@@ -17,8 +17,8 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
   return (
     <>
       <Hero
-        title="Welcome to Saelix"
-        subtitle="Advanced AI Research & Development. Building ethical, coherent AI systems for enterprise applications."
+        title="Infrastructure Management Platform"
+        subtitle="Unified GIS and fleet management for water utilities, municipalities, and infrastructure operators. Streamline inspections, work orders, and crew operations with Saelix Slate."
         ctaText="Explore Saelix Slate"
         onCtaClick={handleExploreSlate}
       />
@@ -36,10 +36,10 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
       <section className="cta-section">
         <div className="container">
           <div className="cta-content">
-            <h2 className="cta-title">Ready to Transform Your AI Workflows?</h2>
-            <p className="cta-description">Get started with Saelix Slate today</p>
+            <h2 className="cta-title">Ready to Transform Your Operations?</h2>
+            <p className="cta-description">Join water utilities and municipalities using Saelix Slate to manage infrastructure at scale.</p>
             <button className="btn btn-primary" onClick={handleExploreSlate}>
-              Get Started
+              See How It Works
             </button>
           </div>
         </div>
