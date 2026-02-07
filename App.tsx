@@ -6,6 +6,7 @@ import { PageView } from './types';
 // Lazy load pages for code splitting
 const Home = lazy(() => import('./pages/Home'));
 const SaelixSlate = lazy(() => import('./pages/SaelixSlate'));
+const Demo = lazy(() => import('./pages/Demo'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -29,7 +30,9 @@ const App: React.FC = () => {
       case 'home':
         return <Home setPage={setCurrentPage} />;
       case 'saelix-slate':
-        return <SaelixSlate />;
+        return <SaelixSlate setPage={setCurrentPage} />;
+      case 'demo':
+        return <Demo setPage={setCurrentPage} />;
       default:
         return <Home setPage={setCurrentPage} />;
     }
@@ -43,7 +46,7 @@ const App: React.FC = () => {
           {renderPage()}
         </Suspense>
       </main>
-      <Footer />
+      {currentPage !== 'demo' && <Footer />}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Play } from 'lucide-react';
 import { PageView } from '../types';
 
 interface NavigationProps {
@@ -20,10 +20,20 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, setPage }) => {
     setIsMenuOpen(false);
   };
 
+  // Hide navigation on demo page (demo has its own nav)
+  if (currentPage === 'demo') return null;
+
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <div className="nav-logo">
+        <div
+          className="nav-logo"
+          onClick={() => handleNavClick('home')}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && handleNavClick('home')}
+          style={{ cursor: 'pointer' }}
+        >
           <span className="logo-text">Saelix</span>
         </div>
 
@@ -38,6 +48,13 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, setPage }) => {
               {item.label}
             </button>
           ))}
+          <button
+            className="btn btn-primary btn-nav-demo"
+            onClick={() => handleNavClick('demo')}
+          >
+            <Play size={14} />
+            Try Demo
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -62,6 +79,14 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, setPage }) => {
               {item.label}
             </button>
           ))}
+          <button
+            className="btn btn-primary"
+            onClick={() => handleNavClick('demo')}
+            style={{ marginTop: '0.5rem' }}
+          >
+            <Play size={14} />
+            Try Demo
+          </button>
         </div>
       )}
     </nav>
