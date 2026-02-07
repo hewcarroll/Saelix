@@ -1,8 +1,17 @@
 import React from 'react';
 import { SAELIX_SLATE, PRODUCT_MODULES, TARGET_CUSTOMERS } from '../constants';
-import { ArrowRight, Check, MapPin, Zap, Users } from 'lucide-react';
+import { Check, MapPin, Zap, Users, Play } from 'lucide-react';
+import { PageView } from '../types';
 
-const SaelixSlate: React.FC = () => {
+interface SaelixSlateProps {
+  setPage: (page: PageView) => void;
+}
+
+const SaelixSlate: React.FC<SaelixSlateProps> = ({ setPage }) => {
+  const handleLaunchDemo = () => {
+    setPage('demo');
+  };
+
   return (
     <>
       {/* Product Hero */}
@@ -14,9 +23,9 @@ const SaelixSlate: React.FC = () => {
             <p style={{ marginBottom: '2rem', fontSize: '18px', maxWidth: '700px', margin: '0 auto 2rem' }}>
               Enterprise GIS and fleet management for water utilities, municipalities, and infrastructure operators.
             </p>
-            <button className="btn btn-primary">
-              Request a Demo
-              <ArrowRight className="btn-icon" />
+            <button className="btn btn-primary btn-lg" onClick={handleLaunchDemo}>
+              <Play size={18} />
+              Try the Demo
             </button>
           </div>
         </div>
@@ -28,12 +37,12 @@ const SaelixSlate: React.FC = () => {
           <h2 className="section-title">The Challenge</h2>
           <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <p style={{ fontSize: '18px', color: '#6B7280', lineHeight: '1.6', marginBottom: '2rem' }}>
-              Water utilities face critical challenges: aging infrastructure requiring constant inspection, 
-              disconnected systems managing assets separately from operations, lengthy inspection-to-repair cycles, 
+              Water utilities face critical challenges: aging infrastructure requiring constant inspection,
+              disconnected systems managing assets separately from operations, lengthy inspection-to-repair cycles,
               and complex regulatory compliance requirements.
             </p>
             <p style={{ fontSize: '16px', color: '#6B7280' }}>
-              Saelix Slate unifies these operations into one integrated platform, connecting field inspections 
+              Saelix Slate unifies these operations into one integrated platform, connecting field inspections
               to work orders to crew dispatch to compliance reporting.
             </p>
           </div>
@@ -167,7 +176,7 @@ const SaelixSlate: React.FC = () => {
                   <div style={{ padding: '1rem', backgroundColor: '#E6F0FF', borderRadius: '8px', marginBottom: '0.5rem' }}>
                     <p style={{ fontWeight: '600', color: '#0066CC' }}>{step}</p>
                   </div>
-                  {idx < 6 && <p style={{ fontSize: '20px', color: '#0066CC' }}>→</p>}
+                  {idx < 6 && <p style={{ fontSize: '20px', color: '#0066CC' }}>&rarr;</p>}
                 </div>
               ))}
             </div>
@@ -203,11 +212,11 @@ const SaelixSlate: React.FC = () => {
       <section className="final-cta-section">
         <div className="container">
           <div className="final-cta-content">
-            <h2 className="final-cta-title">Transform Your Infrastructure Operations</h2>
-            <p className="final-cta-description">See how Saelix Slate can streamline your water utility operations with unified GIS and fleet management.</p>
-            <button className="btn btn-primary">
-              Schedule a Demo
-              <ArrowRight className="btn-icon" />
+            <h2 className="final-cta-title">See It for Yourself</h2>
+            <p className="final-cta-description">Explore the interactive demo to experience how Saelix Slate manages infrastructure operations.</p>
+            <button className="btn btn-primary btn-lg" onClick={handleLaunchDemo}>
+              <Play size={18} />
+              Launch Demo
             </button>
           </div>
         </div>

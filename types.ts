@@ -10,4 +10,4 @@ export interface SaelixSlateSpec {
   features: string[];
 }
 
-export type PageView = 'home' | 'saelix-slate';
+export type PageView = 'home' | 'saelix-slate' | 'demo';
