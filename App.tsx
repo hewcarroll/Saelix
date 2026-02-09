@@ -7,6 +7,7 @@ import { PageView } from './types';
 const Home = lazy(() => import('./pages/Home'));
 const SaelixSlate = lazy(() => import('./pages/SaelixSlate'));
 const Demo = lazy(() => import('./pages/Demo'));
+const Kala = lazy(() => import('./pages/Kala'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -33,6 +34,8 @@ const App: React.FC = () => {
         return <SaelixSlate setPage={setCurrentPage} />;
       case 'demo':
         return <Demo setPage={setCurrentPage} />;
+      case 'kala':
+        return <Kala setPage={setCurrentPage} />;
       default:
         return <Home setPage={setCurrentPage} />;
     }

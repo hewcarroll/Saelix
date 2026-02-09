@@ -12,7 +12,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, setPage }) => {
 
   const navItems: { label: string; page: PageView }[] = [
     { label: 'Home', page: 'home' },
-    { label: 'Saelix Slate', page: 'saelix-slate' }
+    { label: 'Saelix Slate', page: 'saelix-slate' },
+    { label: 'KALA', page: 'kala' }
   ];
 
   const handleNavClick = (page: PageView) => {
