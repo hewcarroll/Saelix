@@ -1192,868 +1192,591 @@ a:hover {
 }
 
 /* ============================================
-   DEMO APP — LAYOUT
+   DEMO — PLACEHOLDER
    ============================================ */
 
-.demo-app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-  background: #F1F5F9;
-}
-
-.demo-banner {
+.demo-placeholder {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 8px 16px;
-  background: #0F172A;
-  color: white;
-  font-size: 13px;
-  flex-shrink: 0;
-}
-
-.demo-back-btn {
-  background: none;
-  color: #94A3B8;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  transition: all var(--transition-fast);
-}
-
-.demo-back-btn:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.demo-banner-label {
-  color: #64748B;
-  font-weight: 500;
-}
-
-.demo-layout {
-  display: flex;
-  flex: 1;
-  overflow: hidden;
-}
-
-/* Demo sidebar */
-.demo-sidebar {
-  width: 220px;
-  background: #1E293B;
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  transition: width var(--transition-normal);
-}
-
-.demo-sidebar.collapsed {
-  width: 56px;
-}
-
-.demo-sidebar-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px;
-  border-bottom: 1px solid #334155;
-}
-
-.demo-sidebar-logo {
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  white-space: nowrap;
-}
-
-.demo-sidebar.collapsed .demo-sidebar-logo {
-  display: none;
-}
-
-.demo-collapse-btn {
-  background: none;
-  color: #64748B;
-  padding: 4px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-}
-
-.demo-collapse-btn:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.demo-sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  gap: 2px;
-  overflow-y: auto;
-}
-
-.demo-sidebar-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  color: #94A3B8;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 6px;
-  background: none;
-  text-align: left;
-  white-space: nowrap;
-  transition: all var(--transition-fast);
-}
-
-.demo-sidebar-item:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.demo-sidebar-item.active {
-  color: white;
-  background: var(--color-primary);
-}
-
-.demo-sidebar.collapsed .demo-sidebar-item {
   justify-content: center;
-  padding: 10px;
+  min-height: 500px;
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background: linear-gradient(135deg, #F8FAFC 0%, var(--color-primary-light) 100%);
 }
 
-/* Demo main area */
-.demo-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+.demo-placeholder-content {
+  text-align: center;
+  max-width: 500px;
 }
 
-.demo-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 24px;
-  background: white;
-  border-bottom: 1px solid var(--color-border);
-  flex-shrink: 0;
-}
-
-.demo-page-title {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-}
-
-.demo-topbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.demo-search-box {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  background: var(--color-bg-light);
-  border-radius: 6px;
-  color: #9CA3AF;
-  font-size: 13px;
-}
-
-.demo-icon-btn {
-  background: none;
-  color: #6B7280;
-  padding: 6px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-}
-
-.demo-icon-btn:hover {
-  background: var(--color-bg-light);
-  color: var(--color-text-primary);
-}
-
-.demo-user-avatar {
-  width: 32px;
-  height: 32px;
+.demo-placeholder-icon {
+  width: 80px;
+  height: 80px;
   background: var(--color-primary-light);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-primary);
+  margin: 0 auto var(--spacing-xl);
 }
 
-.demo-content-area {
-  flex: 1;
-  overflow-y: auto;
-  padding: 24px;
+.demo-placeholder-content h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+.demo-placeholder-content p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xl);
+  line-height: var(--line-height-normal);
 }
 
 /* ============================================
-   DEMO — MODULE CONTENT
+   KALA — HOME SECTION
    ============================================ */
 
-.demo-module-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.kala-home-section {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  color: white;
 }
 
-/* Stats row */
-.demo-stats-row {
+.kala-home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.demo-stat-card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
+.kala-home-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.demo-stat-header {
+.kala-orb {
+  width: 200px;
+  height: 200px;
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  justify-content: center;
 }
 
-.demo-stat-label {
-  font-size: 13px;
-  color: #6B7280;
-  font-weight: 500;
+.kala-orb.large {
+  width: 240px;
+  height: 240px;
 }
 
-.demo-stat-icon {
-  color: #9CA3AF;
+.kala-orb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(99, 102, 241, 0.3);
 }
 
-.demo-stat-value {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--color-text-primary);
+.kala-orb-ring.ring-1 {
+  width: 100%;
+  height: 100%;
+  animation: kala-spin 12s linear infinite;
 }
 
-.demo-stat-change {
-  font-size: 12px;
-  color: #6B7280;
-  margin-top: 4px;
+.kala-orb-ring.ring-2 {
+  width: 75%;
+  height: 75%;
+  border-color: rgba(139, 92, 246, 0.4);
+  animation: kala-spin-reverse 8s linear infinite;
 }
 
-.demo-stat-change.positive {
-  color: #10B981;
+.kala-orb-ring.ring-3 {
+  width: 50%;
+  height: 50%;
+  border-color: rgba(167, 139, 250, 0.5);
+  animation: kala-spin 6s linear infinite;
 }
 
-.demo-stat-change.negative {
-  color: #EF4444;
-}
-
-/* Panels */
-.demo-panels-row {
-  display: flex;
-  gap: 16px;
-}
-
-.demo-panel {
-  background: white;
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-}
-
-.demo-panel-header {
+.kala-orb-core {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
-  border-bottom: 1px solid #F3F4F6;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+  z-index: 1;
 }
 
-.demo-panel-header h3 {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--color-text-primary);
+.kala-orb.large .kala-orb-core {
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.5);
 }
 
-.demo-link-btn {
-  background: none;
-  color: var(--color-primary);
-  font-size: 13px;
-  font-weight: 500;
+@keyframes kala-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.demo-link-btn:hover {
-  text-decoration: underline;
+@keyframes kala-spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
 }
 
-.demo-badge {
-  background: #FEF3C7;
-  color: #92400E;
-  font-size: 11px;
-  font-weight: 600;
-  padding: 2px 8px;
-  border-radius: 10px;
-}
-
-/* Activity list */
-.demo-activity-list {
-  padding: 0;
-}
-
-.demo-activity-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 20px;
-  border-bottom: 1px solid #F9FAFB;
-  font-size: 13px;
-}
-
-.demo-activity-icon {
-  flex-shrink: 0;
-  display: flex;
-}
-
-.demo-activity-item.success .demo-activity-icon { color: #10B981; }
-.demo-activity-item.warning .demo-activity-icon { color: #F59E0B; }
-.demo-activity-item.info .demo-activity-icon { color: #0066CC; }
-
-.demo-activity-text {
-  flex: 1;
-  color: #374151;
-}
-
-.demo-activity-time {
-  color: #9CA3AF;
-  font-size: 12px;
-  flex-shrink: 0;
-}
-
-/* Alerts */
-.demo-alerts-list {
-  padding: 8px;
+.kala-home-text {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: var(--spacing-md);
 }
 
-.demo-alert {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 12px;
-  border-radius: 6px;
-  font-size: 13px;
-}
-
-.demo-alert.critical {
-  background: #FEF2F2;
-  color: #991B1B;
-}
-
-.demo-alert.warning {
-  background: #FFFBEB;
-  color: #92400E;
-}
-
-.demo-alert.info {
-  background: #EFF6FF;
-  color: #1E40AF;
-}
-
-/* ============================================
-   DEMO — TABLE STYLES
-   ============================================ */
-
-.demo-table-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.demo-toolbar-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.demo-toolbar-btn {
-  background: white;
-  border: 1px solid var(--color-border);
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  color: #374151;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: all var(--transition-fast);
-}
-
-.demo-toolbar-btn:hover {
-  background: var(--color-bg-light);
-  border-color: #D1D5DB;
-}
-
-.demo-toolbar-btn.active {
-  background: var(--color-primary-light);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-.demo-table {
-  background: white;
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-}
-
-.demo-table-header {
-  display: flex;
-  padding: 12px 20px;
-  background: #F9FAFB;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.demo-th {
-  font-size: 12px;
-  font-weight: 600;
-  color: #6B7280;
+.kala-badge {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.2);
+  color: #A5B4FC;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: 4px 12px;
+  border-radius: 20px;
+  width: fit-content;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.demo-table-row {
+.kala-home-title {
+  font-size: 42px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #C7D2FE, #A78BFA, #818CF8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.kala-home-fullname {
+  font-size: var(--font-size-lg);
+  color: #94A3B8;
+  font-weight: var(--font-weight-medium);
+}
+
+.kala-home-description {
+  font-size: var(--font-size-base);
+  color: #CBD5E1;
+  line-height: var(--line-height-normal);
+}
+
+.kala-home-highlights {
   display: flex;
-  padding: 14px 20px;
-  border-bottom: 1px solid #F9FAFB;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.kala-highlight {
+  display: flex;
   align-items: center;
-  transition: background var(--transition-fast);
+  gap: 8px;
+  font-size: var(--font-size-sm);
+  color: #A5B4FC;
+  font-weight: var(--font-weight-medium);
 }
 
-.demo-table-row:hover {
-  background: #FAFBFC;
+.kala-home-section .btn-secondary {
+  color: #A5B4FC;
+  border-color: rgba(165, 180, 252, 0.4);
 }
 
-.demo-td {
-  font-size: 13px;
-  color: #374151;
+.kala-home-section .btn-secondary:hover {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: #A5B4FC;
 }
 
-/* Status badges */
-.demo-status-badge {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 600;
+@media (max-width: 900px) {
+  .kala-home-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .kala-home-text {
+    align-items: center;
+  }
+
+  .kala-home-highlights {
+    justify-content: center;
+  }
+
+  .kala-home-title {
+    font-size: var(--font-size-3xl);
+  }
 }
-
-.demo-status-badge.complete,
-.demo-status-badge.ok {
-  background: #ECFDF5;
-  color: #065F46;
-}
-
-.demo-status-badge.in-progress,
-.demo-status-badge.scheduled {
-  background: #EFF6FF;
-  color: #1E40AF;
-}
-
-.demo-status-badge.open {
-  background: #FEF3C7;
-  color: #92400E;
-}
-
-.demo-status-badge.critical {
-  background: #FEF2F2;
-  color: #991B1B;
-}
-
-.demo-status-badge.review,
-.demo-status-badge.wo-created {
-  background: #F3E8FF;
-  color: #6B21A8;
-}
-
-.demo-status-badge.low {
-  background: #FEF2F2;
-  color: #991B1B;
-}
-
-/* Grade badges */
-.demo-grade {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.demo-grade.grade-1 { background: #ECFDF5; color: #065F46; }
-.demo-grade.grade-2 { background: #F0FDF4; color: #166534; }
-.demo-grade.grade-3 { background: #FFFBEB; color: #92400E; }
-.demo-grade.grade-4 { background: #FFF7ED; color: #9A3412; }
-.demo-grade.grade-5 { background: #FEF2F2; color: #991B1B; }
-.demo-grade.grade-na { background: #F3F4F6; color: #6B7280; }
-
-/* Priority badges */
-.demo-priority {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 600;
-}
-
-.demo-priority.critical { background: #FEF2F2; color: #991B1B; }
-.demo-priority.high { background: #FFF7ED; color: #9A3412; }
-.demo-priority.medium { background: #FFFBEB; color: #92400E; }
-.demo-priority.low { background: #F3F4F6; color: #6B7280; }
 
 /* ============================================
-   DEMO — GIS MAP
+   KALA — DETAIL PAGE HERO
    ============================================ */
 
-.demo-map-toolbar {
+.kala-hero {
+  background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0F172A 100%);
+  color: white;
+  padding: var(--spacing-3xl) var(--spacing-md);
+  text-align: center;
+  min-height: 500px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 8px;
+  justify-content: center;
 }
 
-.demo-map-container {
+.kala-hero-content {
+  max-width: 700px;
+  margin: 0 auto;
   display: flex;
-  gap: 16px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-}
-
-.demo-map-area {
-  flex: 1;
-  position: relative;
-  background: #FAFBFC;
-  min-height: 400px;
-}
-
-.demo-map-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.demo-map-legend {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  background: white;
-  padding: 8px 12px;
-  border-radius: 6px;
-  box-shadow: var(--shadow-md);
-  display: flex;
-  gap: 16px;
-  font-size: 11px;
-  color: #374151;
-}
-
-.legend-item {
-  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: var(--spacing-md);
 }
 
-.legend-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.kala-hero-orb {
+  margin-bottom: var(--spacing-lg);
+}
+
+.kala-status-badge {
   display: inline-block;
+  background: rgba(99, 102, 241, 0.2);
+  color: #A5B4FC;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: 4px 14px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.demo-map-sidebar {
-  width: 240px;
-  padding: 16px;
-  border-left: 1px solid var(--color-border);
+.kala-hero-title {
+  font-size: 56px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 4px;
+  background: linear-gradient(135deg, #C7D2FE, #A78BFA, #818CF8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.kala-hero-fullname {
+  font-size: var(--font-size-xl);
+  color: #94A3B8;
+  font-weight: var(--font-weight-medium);
+}
+
+.kala-hero-description {
+  font-size: var(--font-size-base);
+  color: #CBD5E1;
+  line-height: var(--line-height-normal);
+  max-width: 600px;
+}
+
+/* ============================================
+   KALA — ETHICS KERNEL
+   ============================================ */
+
+.kala-ethics-section {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background: var(--color-bg-white);
+}
+
+.kala-ethics-intro {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-2xl);
+  line-height: var(--line-height-normal);
+}
+
+.kala-laws-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.kala-law-card {
+  background: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  border-left: 4px solid #6366F1;
+}
+
+.kala-law-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.kala-law-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   flex-shrink: 0;
 }
 
-.demo-map-sidebar h4 {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--color-text-primary);
-}
-
-.demo-asset-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.demo-detail-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
-  padding: 4px 0;
-  border-bottom: 1px solid #F3F4F6;
-}
-
-.demo-detail-label {
-  color: #6B7280;
-  font-weight: 500;
-}
-
-.demo-detail-value {
-  color: #111827;
-}
-
-/* ============================================
-   DEMO — SCHEDULING
-   ============================================ */
-
-.demo-schedule-grid {
-  background: white;
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-}
-
-.demo-schedule-header {
-  display: grid;
-  grid-template-columns: 120px repeat(5, 1fr);
-  background: #F9FAFB;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.demo-schedule-label,
-.demo-schedule-day {
-  padding: 10px 12px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #6B7280;
+.kala-law-number {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: #6366F1;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
 }
 
-.demo-schedule-row {
-  display: grid;
-  grid-template-columns: 120px repeat(5, 1fr);
-  border-bottom: 1px solid #F9FAFB;
+.kala-law-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
 }
 
-.demo-schedule-crew {
-  padding: 12px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #374151;
-  display: flex;
-  align-items: center;
+.kala-law-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+  margin-bottom: var(--spacing-sm);
 }
 
-.demo-schedule-slot {
-  padding: 10px 8px;
-  font-size: 11px;
-  font-weight: 500;
-  border-radius: 4px;
-  margin: 4px;
-  text-align: center;
-}
-
-.demo-schedule-slot.available {
-  background: #F0FDF4;
-  color: #166534;
-}
-
-.demo-schedule-slot.work-order {
-  background: #EFF6FF;
-  color: #1E40AF;
-}
-
-.demo-schedule-slot.inspection {
-  background: #F3E8FF;
-  color: #6B21A8;
-}
-
-.demo-schedule-slot.training {
-  background: #FEF3C7;
-  color: #92400E;
+.kala-law-basis {
+  font-size: var(--font-size-xs);
+  color: #9CA3AF;
+  font-style: italic;
 }
 
 /* ============================================
-   DEMO — REPORTS
+   KALA — PERSISTENT MEMORY
    ============================================ */
 
-.demo-reports-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
+.kala-memory-section {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  color: white;
 }
 
-.demo-report-card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: var(--shadow-sm);
+.kala-memory-section .section-title {
+  color: white;
+}
+
+.kala-memory-intro {
+  font-size: var(--font-size-base);
+  color: #94A3B8;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-2xl);
+  line-height: var(--line-height-normal);
+}
+
+.kala-memory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.kala-memory-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  text-align: center;
   transition: all var(--transition-normal);
 }
 
-.demo-report-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+.kala-memory-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-4px);
 }
 
-.demo-report-type {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 600;
-  background: var(--color-primary-light);
-  color: var(--color-primary);
-  margin-bottom: 8px;
-}
-
-.demo-report-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  margin-bottom: 6px;
-}
-
-.demo-report-desc {
-  font-size: 13px;
-  color: #6B7280;
-  line-height: 1.5;
-  margin-bottom: 12px;
-}
-
-.demo-report-footer {
+.kala-memory-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 12px;
-  border-top: 1px solid #F3F4F6;
-  font-size: 12px;
-  color: #9CA3AF;
-}
-
-/* ============================================
-   DEMO — ANALYTICS CHARTS
-   ============================================ */
-
-.demo-chart-placeholder {
-  padding: 20px;
-}
-
-.demo-bar-chart {
-  display: flex;
-  align-items: flex-end;
   justify-content: center;
-  gap: 24px;
-  height: 140px;
-  padding-top: 10px;
+  color: #A5B4FC;
+  margin: 0 auto var(--spacing-md);
 }
 
-.demo-bar-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
+.kala-memory-role {
+  font-size: var(--font-size-xs);
+  color: #6366F1;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-sm);
 }
 
-.demo-bar {
-  width: 36px;
-  border-radius: 4px 4px 0 0;
-  transition: height var(--transition-normal);
+.kala-memory-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: white;
+  margin-bottom: var(--spacing-sm);
 }
 
-.demo-bar-label {
-  font-size: 11px;
-  color: #6B7280;
+.kala-memory-desc {
+  font-size: var(--font-size-sm);
+  color: #94A3B8;
+  line-height: var(--line-height-normal);
 }
-
-.demo-bar-value {
-  font-size: 12px;
-  font-weight: 600;
-  color: #374151;
-}
-
-.demo-line-chart {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.demo-line-svg {
-  width: 100%;
-  height: 120px;
-}
-
-.demo-chart-legend {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  font-size: 11px;
-  color: #6B7280;
-}
-
-/* ============================================
-   DEMO — RESPONSIVE
-   ============================================ */
 
 @media (max-width: 768px) {
-  .demo-sidebar {
+  .kala-memory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   KALA — ARCHITECTURE FLOW
+   ============================================ */
+
+.kala-architecture-section {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background: var(--color-bg-light);
+}
+
+.kala-arch-flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--spacing-md);
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.kala-arch-step {
+  text-align: center;
+  max-width: 180px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.kala-arch-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0 auto var(--spacing-sm);
+}
+
+.kala-arch-label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.kala-arch-step p {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.kala-arch-arrow {
+  display: flex;
+  align-items: center;
+  padding-top: 14px;
+  color: #6366F1;
+}
+
+@media (max-width: 768px) {
+  .kala-arch-arrow {
     display: none;
   }
 
-  .demo-panels-row {
-    flex-direction: column;
+  .kala-arch-flow {
+    gap: var(--spacing-xl);
   }
+}
 
-  .demo-map-container {
-    flex-direction: column;
-  }
+/* ============================================
+   KALA — CAPABILITIES
+   ============================================ */
 
-  .demo-map-sidebar {
-    width: 100%;
-    border-left: none;
-    border-top: 1px solid var(--color-border);
-  }
+.kala-capabilities-section {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background: var(--color-bg-white);
+}
 
-  .demo-schedule-grid {
-    overflow-x: auto;
-  }
+.kala-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  .demo-schedule-header,
-  .demo-schedule-row {
-    min-width: 700px;
-  }
+.kala-capability-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: var(--color-bg-light);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
 
-  .demo-table-header,
-  .demo-table-row {
-    min-width: 600px;
-  }
+.kala-cap-check {
+  color: #6366F1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
 
-  .demo-table {
-    overflow-x: auto;
+@media (max-width: 768px) {
+  .kala-capabilities-grid {
+    grid-template-columns: 1fr;
   }
+}
+
+/* ============================================
+   KALA — CTA
+   ============================================ */
+
+.kala-cta-section {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+  color: white;
+  text-align: center;
+}
+
+.kala-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.kala-cta-content h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+}
+
+.kala-cta-content p {
+  font-size: var(--font-size-lg);
+  opacity: 0.95;
+  margin-bottom: var(--spacing-xl);
 }

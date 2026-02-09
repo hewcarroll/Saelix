@@ -1,6 +1,6 @@
 import React from 'react';
-import { ArrowRight, Play, MapPin, Zap, Users, BarChart3, ClipboardCheck, Calendar, Package, FileText } from 'lucide-react';
-import { SAELIX_SLATE, PRODUCT_MODULES } from '../constants';
+import { ArrowRight, Play, MapPin, Zap, Users, BarChart3, ClipboardCheck, Calendar, Package, FileText, Brain, Shield, Eye } from 'lucide-react';
+import { SAELIX_SLATE, PRODUCT_MODULES, KALA } from '../constants';
 import { PageView } from '../types';
 
 interface HomeProps {
@@ -139,6 +139,52 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
               <Zap size={36} className="value-prop-icon" />
               <h3>Automated Workflows</h3>
               <p>Streamline from inspection to completion with automated work order generation, assignment, and tracking.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* KALA AI Section */}
+      <section className="kala-home-section">
+        <div className="container">
+          <div className="kala-home-grid">
+            <div className="kala-home-visual">
+              <div className="kala-orb">
+                <div className="kala-orb-ring ring-1" />
+                <div className="kala-orb-ring ring-2" />
+                <div className="kala-orb-ring ring-3" />
+                <div className="kala-orb-core">
+                  <Brain size={40} />
+                </div>
+              </div>
+            </div>
+            <div className="kala-home-text">
+              <div className="kala-badge">Research & Development</div>
+              <h2 className="kala-home-title">KALA</h2>
+              <p className="kala-home-fullname">{KALA.fullName}</p>
+              <p className="kala-home-description">
+                {KALA.tagline} — an adaptive AI built on an immutable ethics kernel of five laws
+                and powered by experimental persistent memory combining nested QR codes,
+                golden ratio fractals, and quantum probability bias.
+              </p>
+              <div className="kala-home-highlights">
+                <div className="kala-highlight">
+                  <Shield size={20} />
+                  <span>5 Immutable Laws</span>
+                </div>
+                <div className="kala-highlight">
+                  <Brain size={20} />
+                  <span>Persistent Memory</span>
+                </div>
+                <div className="kala-highlight">
+                  <Eye size={20} />
+                  <span>Full Transparency</span>
+                </div>
+              </div>
+              <button className="btn btn-secondary" onClick={() => setPage('kala')}>
+                Learn About KALA
+                <ArrowRight className="btn-icon" />
+              </button>
             </div>
           </div>
         </div>

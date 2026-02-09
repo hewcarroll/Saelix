@@ -19,6 +19,7 @@ const Footer: React.FC = () => {
             <h5 className="footer-subheading">Product</h5>
             <ul className="footer-links">
               <li><a href="#saelix-slate" className="footer-link">Saelix Slate</a></li>
+              <li><a href="#kala" className="footer-link">KALA</a></li>
             </ul>
           </div>
 
