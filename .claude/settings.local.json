@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e:*)",
+      "Bash(where:*)",
+      "Bash(cmd /c \"where node 2>&1 & where npm 2>&1\")",
+      "Bash(cmd /c \"del nul\")",
+      "Bash(cmd /c \"del \\\\?\\\\C:\\\\Users\\\\Hew\\\\Documents\\\\Saelix\\\\slate-demo\\\\nul\")"
+    ]
+  }
+}
