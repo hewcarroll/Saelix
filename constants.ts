@@ -4,7 +4,7 @@ export const COMPANY_INFO = {
   name: 'Saelix',
   tagline: 'Infrastructure Management Platform',
   description: 'Unified GIS, inspections, and work orders for water, sewer, and stormwater utilities, municipalities, and infrastructure operators.',
-  contactEmail: 'collaborate@saelix.org',
+  contactEmail: 'hew@saelix.org',
   founded: 2023
 };
 
