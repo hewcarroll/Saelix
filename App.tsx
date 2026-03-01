@@ -8,6 +8,8 @@ const Home = lazy(() => import('./pages/Home'));
 const SaelixSlate = lazy(() => import('./pages/SaelixSlate'));
 const Demo = lazy(() => import('./pages/Demo'));
 const Kala = lazy(() => import('./pages/Kala'));
+const SolutionsWater = lazy(() => import('./pages/SolutionsWater'));
+const SolutionsMunicipalities = lazy(() => import('./pages/SolutionsMunicipalities'));
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -36,6 +38,10 @@ const App: React.FC = () => {
         return <Demo setPage={setCurrentPage} />;
       case 'kala':
         return <Kala setPage={setCurrentPage} />;
+      case 'solutions-water':
+        return <SolutionsWater setPage={setCurrentPage} />;
+      case 'solutions-municipalities':
+        return <SolutionsMunicipalities setPage={setCurrentPage} />;
       default:
         return <Home setPage={setCurrentPage} />;
     }
@@ -49,7 +55,7 @@ const App: React.FC = () => {
           {renderPage()}
         </Suspense>
       </main>
-      {currentPage !== 'demo' && <Footer />}
+      {currentPage !== 'demo' && <Footer setPage={setCurrentPage} />}
     </div>
   );
 };

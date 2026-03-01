@@ -1,7 +1,8 @@
 import React from 'react';
-import { ArrowRight, Play, MapPin, Zap, Users, BarChart3, ClipboardCheck, Calendar, Package, FileText, Brain, Shield, Eye } from 'lucide-react';
-import { SAELIX_SLATE, PRODUCT_MODULES, KALA } from '../constants';
+import { ArrowRight, Play, MapPin, Zap, Users, BarChart3, ClipboardCheck, Calendar, Package, FileText, Brain, Check, TrendingUp, Search, MessageSquare } from 'lucide-react';
+import { SAELIX_SLATE, PRODUCT_MODULES, KALA, WHY_UTILITIES_CHOOSE, GUIDED_DEMO_STEPS } from '../constants';
 import { PageView } from '../types';
+import ContactForm from '../components/ContactForm';
 
 interface HomeProps {
   setPage: (page: PageView) => void;
@@ -12,8 +13,8 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
     setPage('demo');
   };
 
-  const handleLearnMore = () => {
-    setPage('saelix-slate');
+  const scrollToContactForm = () => {
+    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const moduleIcons: Record<string, React.ReactNode> = {
@@ -34,20 +35,19 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
         <div className="container">
           <div className="slate-hero-grid">
             <div className="slate-hero-text">
-              <div className="slate-badge">Infrastructure Management Platform</div>
+              <div className="slate-badge">For Water, Sewer & Stormwater Utilities</div>
               <h1 className="slate-hero-title">Saelix Slate</h1>
               <p className="slate-hero-tagline">{SAELIX_SLATE.tagline}</p>
               <p className="slate-hero-description">
                 {SAELIX_SLATE.description}
               </p>
               <div className="slate-hero-ctas">
-                <button className="btn btn-primary btn-lg" onClick={handleLaunchDemo}>
+                <button className="btn btn-primary btn-lg" onClick={scrollToContactForm}>
+                  Book a 30-Minute Demo
+                </button>
+                <button className="btn btn-secondary" onClick={handleLaunchDemo}>
                   <Play size={18} />
                   Try the Demo
-                </button>
-                <button className="btn btn-secondary" onClick={handleLearnMore}>
-                  Learn More
-                  <ArrowRight className="btn-icon" />
                 </button>
               </div>
             </div>
@@ -100,12 +100,27 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
         </div>
       </section>
 
+      {/* Why Utilities Choose Saelix */}
+      <section className="why-choose-section">
+        <div className="container">
+          <h2 className="section-title" style={{ textAlign: 'center' }}>Why Utilities Choose Saelix</h2>
+          <div className="why-choose-list">
+            {WHY_UTILITIES_CHOOSE.map((item, index) => (
+              <div key={index} className="why-choose-item">
+                <Check size={22} className="check-icon" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Platform Modules */}
       <section className="slate-capabilities">
         <div className="container">
-          <h2 className="section-title" style={{ textAlign: 'center' }}>Everything You Need in One Platform</h2>
+          <h2 className="section-title" style={{ textAlign: 'center' }}>Eight Integrated Modules</h2>
           <p className="section-subtitle">
-            Eight integrated modules covering the full lifecycle of infrastructure operations.
+            Everything you need to manage water, sewer, and stormwater infrastructure in one platform.
           </p>
           <div className="modules-grid">
             {PRODUCT_MODULES.map((module, index) => (
@@ -127,24 +142,24 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
           <div className="value-props-grid">
             <div className="value-prop">
               <MapPin size={36} className="value-prop-icon" />
-              <h3>GIS Asset Management</h3>
-              <p>Interactive mapping and visualization of infrastructure assets with real-time status updates and spatial analysis.</p>
+              <h3>Unified GIS, Inspections & Work Orders</h3>
+              <p>One connected system eliminates duplicate data entry and ensures every inspection finding connects to the right work order and the right crew.</p>
             </div>
             <div className="value-prop">
               <Users size={36} className="value-prop-icon" />
-              <h3>Fleet & Crew Operations</h3>
-              <p>Optimize field operations with intelligent scheduling, dispatch, and crew utilization tracking across projects.</p>
+              <h3>Built for Field Crews</h3>
+              <p>Intuitive interfaces designed for the people doing the actual work — not just back-office managers.</p>
             </div>
             <div className="value-prop">
               <Zap size={36} className="value-prop-icon" />
-              <h3>Automated Workflows</h3>
-              <p>Streamline from inspection to completion with automated work order generation, assignment, and tracking.</p>
+              <h3>Enterprise-Grade, Any-Size Utility</h3>
+              <p>Scalable architecture that works for a 50-mile system or a 5,000-mile system, without enterprise-grade complexity.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* KALA AI Section */}
+      {/* KALA AI Section — R&D Differentiator */}
       <section className="kala-home-section">
         <div className="container">
           <div className="kala-home-grid">
@@ -159,30 +174,30 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
               </div>
             </div>
             <div className="kala-home-text">
-              <div className="kala-badge">Research & Development</div>
+              <div className="kala-badge">R&D / AI Lab</div>
               <h2 className="kala-home-title">KALA</h2>
               <p className="kala-home-fullname">{KALA.fullName}</p>
               <p className="kala-home-description">
-                {KALA.tagline} — an adaptive AI built on an immutable ethics kernel of five laws
-                and powered by experimental persistent memory combining nested QR codes,
-                golden ratio fractals, and quantum probability bias.
+                The AI engine that will power predictive maintenance, anomaly detection, and explainable
+                recommendations inside Slate. Built on an immutable ethics kernel that ensures transparent,
+                auditable, and predictable AI behavior.
               </p>
               <div className="kala-home-highlights">
                 <div className="kala-highlight">
-                  <Shield size={20} />
-                  <span>5 Immutable Laws</span>
+                  <TrendingUp size={20} />
+                  <span>Predictive Maintenance</span>
                 </div>
                 <div className="kala-highlight">
-                  <Brain size={20} />
-                  <span>Persistent Memory</span>
+                  <Search size={20} />
+                  <span>Anomaly Detection</span>
                 </div>
                 <div className="kala-highlight">
-                  <Eye size={20} />
-                  <span>Full Transparency</span>
+                  <MessageSquare size={20} />
+                  <span>Explainable Recommendations</span>
                 </div>
               </div>
               <button className="btn btn-secondary" onClick={() => setPage('kala')}>
-                Learn About KALA
+                Explore the AI Lab
                 <ArrowRight className="btn-icon" />
               </button>
             </div>
@@ -190,17 +205,33 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
         </div>
       </section>
 
-      {/* Demo CTA */}
+      {/* Guided Demo CTA */}
       <section className="slate-demo-cta">
         <div className="container">
           <div className="demo-cta-content">
             <h2>See Saelix Slate in Action</h2>
-            <p>Explore the interactive demo to see how the platform manages infrastructure operations end-to-end.</p>
+            <p>Follow these steps in the interactive demo:</p>
+            <div className="guided-demo-steps">
+              {GUIDED_DEMO_STEPS.map((step) => (
+                <div key={step.step} className="guided-step">
+                  <div className="guided-step-number">{step.step}</div>
+                  <div className="guided-step-action">{step.action}</div>
+                  <div className="guided-step-description">{step.description}</div>
+                </div>
+              ))}
+            </div>
             <button className="btn btn-primary btn-lg" onClick={handleLaunchDemo}>
               <Play size={18} />
-              Launch Demo
+              Launch Interactive Demo
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="contact-section">
+        <div className="container">
+          <ContactForm id="contact-form" />
         </div>
       </section>
     </>

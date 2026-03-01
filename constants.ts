@@ -1,9 +1,9 @@
-import { Feature } from './types';
+import { Feature, ModuleBeforeAfter, SolutionUseCase } from './types';
 
 export const COMPANY_INFO = {
   name: 'Saelix',
   tagline: 'Infrastructure Management Platform',
-  description: 'Enterprise GIS and fleet management solutions for water utilities, municipalities, and infrastructure operators.',
+  description: 'Unified GIS, inspections, and work orders for water, sewer, and stormwater utilities, municipalities, and infrastructure operators.',
   contactEmail: 'collaborate@saelix.org',
   founded: 2023
 };
@@ -11,18 +11,18 @@ export const COMPANY_INFO = {
 export const HOME_PAGE_FEATURES: Feature[] = [
   {
     icon: 'map',
-    title: 'GIS Asset Management',
-    description: 'Interactive mapping and visualization of infrastructure assets with real-time status updates.'
+    title: 'Single Source of Truth',
+    description: 'One platform for GIS assets, inspection records, work orders, and compliance reports — no more toggling between disconnected systems.'
   },
   {
     icon: 'truck',
-    title: 'Fleet & Crew Management',
-    description: 'Optimize field operations with intelligent scheduling, dispatch, and crew utilization tracking.'
+    title: 'Field Inspection to Compliant Report',
+    description: 'CCTV inspection data flows directly into defect scoring, work order generation, and regulatory-ready reports in one continuous workflow.'
   },
   {
     icon: 'zap',
-    title: 'Workflow Automation',
-    description: 'Streamline operations from inspection to completion with automated work order generation and tracking.'
+    title: 'Designed for Field Crews',
+    description: 'Built for the people who actually do the work — intuitive scheduling, mobile-ready dispatch, and real-time crew coordination.'
   }
 ];
 
@@ -30,8 +30,8 @@ export const SAELIX_SLATE = {
   name: 'Saelix Slate',
   version: '1.0.0',
   releaseDate: '2025-Q1',
-  tagline: 'Unified GIS & Fleet Management Platform',
-  description: 'Enterprise-grade platform for managing water, sewer, and stormwater infrastructure. Combines GIS asset management, CCTV inspection tracking, work order dispatch, crew scheduling, and compliance reporting in one unified system.',
+  tagline: 'Unified GIS & Field Operations for Water Infrastructure',
+  description: 'Cut overflow incidents and regulatory risk with unified GIS, inspections, and work orders for water, sewer, and stormwater utilities. Enterprise-grade, but deployable by small and mid-sized utilities.',
   features: [
     'Interactive GIS mapping with real-time asset visualization',
     'CCTV inspection management and defect tracking',
@@ -43,10 +43,10 @@ export const SAELIX_SLATE = {
     'AI-powered data analysis and queries'
   ],
   keyBenefits: [
-    'Reduce inspection-to-repair time from weeks to days',
-    'Optimize crew utilization and reduce operational costs',
-    'Ensure regulatory compliance with audit trails and reporting',
-    'Leverage AI for predictive maintenance and asset prioritization'
+    'Reduce inspection-to-repair cycles from weeks to days',
+    'Eliminate duplicate data entry across GIS, inspections, and work orders',
+    'Generate NASSCO-compliant reports directly from field inspection data',
+    'Optimize crew utilization with intelligent scheduling and dispatch'
   ],
   useCases: [
     'Sanitary sewer system management and maintenance',
@@ -71,6 +71,80 @@ export const PRODUCT_MODULES = [
   { name: 'Analytics', description: 'Advanced metrics and predictive analysis' }
 ];
 
+export const PRODUCT_MODULES_DETAIL: ModuleBeforeAfter[] = [
+  {
+    name: 'Dashboard',
+    icon: 'bar-chart',
+    before: 'Scattered KPI data across spreadsheets, emails, and legacy systems. No single view of operational health.',
+    after: 'Real-time operational dashboard with critical alerts, crew status, and compliance deadlines in one screen.',
+    outcome: 'Faster decision-making, fewer missed SLA deadlines.'
+  },
+  {
+    name: 'GIS Map',
+    icon: 'map-pin',
+    before: 'Paper maps or disconnected GIS that doesn\'t link to inspection history or work orders.',
+    after: 'Interactive asset map with inspection history, condition scores, and work order status layered directly on each pipe segment.',
+    outcome: 'Know the full story of any asset in two clicks.'
+  },
+  {
+    name: 'Inspections',
+    icon: 'clipboard-check',
+    before: 'CCTV footage reviewed in one system, defects logged in another, reports generated manually.',
+    after: 'CCTV inspection records with NASSCO defect coding, automatic severity scoring, and one-click report generation.',
+    outcome: 'From CCTV inspection to compliant report in one system.'
+  },
+  {
+    name: 'Work Orders',
+    icon: 'file-text',
+    before: 'Work orders created manually from inspection notes, dispatched via radio or phone calls.',
+    after: 'Automated work order generation from inspection findings, with crew assignment, priority scoring, and progress tracking.',
+    outcome: 'No inspection finding falls through the cracks.'
+  },
+  {
+    name: 'Scheduling',
+    icon: 'calendar',
+    before: 'Whiteboards, spreadsheets, or memory-based crew scheduling with no visibility into availability.',
+    after: 'Visual crew scheduling with availability tracking, skill matching, and geographic optimization.',
+    outcome: 'Right crew, right job, right time.'
+  },
+  {
+    name: 'Inventory',
+    icon: 'package',
+    before: 'Manual inventory counts, no connection between parts used and work orders completed.',
+    after: 'Materials tracking linked to work orders, automatic reorder alerts, and usage trend analysis.',
+    outcome: 'Never delay a repair for a missing part.'
+  },
+  {
+    name: 'Reports',
+    icon: 'file-text',
+    before: 'Hours spent compiling compliance reports from multiple data sources each reporting cycle.',
+    after: 'One-click compliance reports for EPA, NASSCO, and OSHA requirements with complete audit trails.',
+    outcome: 'Audit-ready documentation without the manual effort.'
+  },
+  {
+    name: 'Analytics',
+    icon: 'bar-chart',
+    before: 'Reactive maintenance decisions based on gut feel or the last emergency.',
+    after: 'Trend analysis, predictive condition scoring, and data-driven capital planning.',
+    outcome: 'Move from reactive to proactive infrastructure management.'
+  }
+];
+
+export const WHY_UTILITIES_CHOOSE = [
+  'Single source of truth for GIS assets, inspections, work orders, and compliance',
+  'From field inspection to compliant report in one continuous workflow',
+  'Enterprise-grade capabilities deployable by small and mid-sized utilities',
+  'Designed for field crews, not just back-office managers',
+  'Built specifically for water, sewer, and stormwater infrastructure'
+];
+
+export const GUIDED_DEMO_STEPS = [
+  { step: 1, action: 'Open the GIS Map', description: 'See your infrastructure assets on an interactive map' },
+  { step: 2, action: 'Select a pipe segment', description: 'View condition data, inspection history, and linked work orders' },
+  { step: 3, action: 'Browse Inspections', description: 'Review CCTV inspection records with NASSCO defect coding' },
+  { step: 4, action: 'Create a Work Order', description: 'Generate a work order directly from an inspection finding' }
+];
+
 export const TARGET_CUSTOMERS = [
   'Municipal Water Departments',
   'Sewer Utilities',
@@ -80,11 +154,99 @@ export const TARGET_CUSTOMERS = [
   'Private Contractors'
 ];
 
+export const SOLUTIONS_WATER_UTILITIES = {
+  title: 'Solutions for Water Utilities',
+  subtitle: 'Unified GIS, inspections, and work orders for water, sewer, and stormwater infrastructure.',
+  heroDescription: 'Water utilities manage thousands of miles of buried infrastructure with aging assets, limited budgets, and growing regulatory pressure. Saelix Slate gives your team one platform to manage it all.',
+  useCases: [
+    {
+      title: 'Sewer Lining & Rehabilitation Projects',
+      description: 'Coordinate CCTV inspection, defect scoring, contractor dispatch, and closeout documentation in one workflow.',
+      bulletPoints: [
+        'Prioritize pipe segments by condition score and failure risk',
+        'Track lining project progress from inspection to completion',
+        'Generate as-built documentation automatically'
+      ]
+    },
+    {
+      title: 'FOG (Fats, Oils & Grease) Programs',
+      description: 'Manage FOG inspections, compliance tracking, and enforcement actions from the same platform as your mainline inspections.',
+      bulletPoints: [
+        'Schedule recurring FOG inspections by zone',
+        'Track compliance status for every food service establishment',
+        'Link FOG violations to downstream SSO risk areas on GIS'
+      ]
+    },
+    {
+      title: 'SSO (Sanitary Sewer Overflow) Prevention',
+      description: 'Identify high-risk segments before overflows happen by connecting inspection data to maintenance history and weather patterns.',
+      bulletPoints: [
+        'Risk-rank pipe segments using inspection and incident history',
+        'Automate preventive maintenance scheduling for high-risk zones',
+        'Document overflow responses for regulatory reporting'
+      ]
+    },
+    {
+      title: 'Capital Improvement Planning',
+      description: 'Use inspection data and condition scoring to build data-driven capital improvement programs.',
+      bulletPoints: [
+        'Aggregate condition data across your entire system',
+        'Project rehabilitation timelines based on deterioration curves',
+        'Export data-backed CIP recommendations for budget requests'
+      ]
+    }
+  ] as SolutionUseCase[]
+};
+
+export const SOLUTIONS_MUNICIPALITIES = {
+  title: 'Solutions for Municipalities',
+  subtitle: 'Enterprise-grade infrastructure management that works for small and mid-sized municipal operations.',
+  heroDescription: 'Municipal public works departments juggle multiple infrastructure systems — water, sewer, stormwater — often with small teams and limited technology budgets. Saelix Slate provides enterprise capabilities without enterprise complexity.',
+  useCases: [
+    {
+      title: 'Multi-System Infrastructure Management',
+      description: 'Manage water, sewer, and stormwater assets in a single GIS-based platform instead of maintaining separate systems for each.',
+      bulletPoints: [
+        'Unified asset registry across all infrastructure types',
+        'Shared crew scheduling across water, sewer, and storm operations',
+        'Consolidated reporting for council presentations and audits'
+      ]
+    },
+    {
+      title: 'Storm Event Response',
+      description: 'Coordinate emergency inspections, damage assessments, and repair dispatch when severe weather hits your infrastructure.',
+      bulletPoints: [
+        'Rapid field inspection capture during and after storm events',
+        'Priority-based work order dispatch for emergency repairs',
+        'FEMA-ready damage documentation and cost tracking'
+      ]
+    },
+    {
+      title: 'Consent Decree & Regulatory Compliance',
+      description: 'Meet regulatory deadlines and consent decree milestones with audit-ready documentation generated directly from operational data.',
+      bulletPoints: [
+        'Track inspection and repair milestones against regulatory timelines',
+        'Generate compliance reports on demand for regulators',
+        'Maintain complete audit trails for every asset and activity'
+      ]
+    },
+    {
+      title: 'Cross-Department Coordination',
+      description: 'Break down silos between water, sewer, streets, and engineering departments with shared visibility into infrastructure activities.',
+      bulletPoints: [
+        'Shared GIS view across departments',
+        'Cross-department work order visibility',
+        'Consolidated scheduling to prevent conflicting fieldwork'
+      ]
+    }
+  ] as SolutionUseCase[]
+};
+
 export const KALA = {
   name: 'KALA',
   fullName: 'Kognition Adaptive Learning Architecture',
   tagline: 'Ethical AI with Persistent Memory',
-  description: 'An adaptive AI architecture built on an immutable ethics kernel — five foundational laws inspired by Asimov\'s Laws of Robotics that cannot be overridden, bypassed, or modified at runtime. KALA combines ethical governance with experimental persistent memory techniques to create an AI that remembers, learns, and operates within inviolable moral boundaries.',
+  description: 'An adaptive AI architecture built on an immutable ethics kernel — five foundational laws that ensure transparent recommendations, auditable decisions, and predictable behavior under regulatory constraints. KALA is the AI engine that will power predictive maintenance, anomaly detection, and explainable recommendations inside Saelix Slate.',
   ethicsKernel: {
     name: 'The Immutable Ethics Kernel',
     description: 'Five laws hardcoded into the architecture. They are not configurable, not trainable, and not subject to optimization. Every decision KALA makes is filtered through this kernel before execution.',
@@ -122,33 +284,33 @@ export const KALA = {
     ]
   },
   persistentMemory: {
-    name: 'Experimental Persistent Memory System',
-    description: 'KALA\'s long-term memory uses a novel encoding architecture that combines three experimental methods to store, retrieve, and verify knowledge across sessions and contexts.',
+    name: 'Adaptive Learning Architecture',
+    description: 'KALA maintains persistent context across sessions, enabling it to build understanding of your infrastructure over time and deliver increasingly relevant recommendations.',
     methods: [
       {
-        name: 'Nested QR Code Encoding',
-        description: 'Information is encoded in hierarchical QR code structures where each code contains references to deeper layers of context. This creates a compressed, self-referential knowledge graph that can be serialized, transmitted, and reconstructed with full fidelity.',
-        role: 'Storage & serialization layer'
+        name: 'Structured Knowledge Encoding',
+        description: 'Information is encoded in hierarchical structures that preserve full context — from individual inspection findings to system-wide condition trends — enabling complete knowledge transfer across sessions.',
+        role: 'Storage & context preservation'
       },
       {
-        name: 'Golden Ratio Fractal Indexing',
-        description: 'Memory nodes are organized using fractal patterns derived from the golden ratio (phi = 1.618...). This self-similar indexing structure ensures efficient retrieval at any scale — from individual facts to entire knowledge domains — with logarithmic access time regardless of memory size.',
-        role: 'Retrieval & organization layer'
+        name: 'Scalable Pattern Indexing',
+        description: 'Memory is organized using self-similar indexing patterns that maintain efficient retrieval at any scale — whether querying a single asset or analyzing trends across an entire utility system.',
+        role: 'Retrieval & organization'
       },
       {
-        name: 'Quantum Probability Bias',
-        description: 'Memory retrieval is weighted by a quantum-inspired probability model where each memory node exists in a superposition of relevance states. Context collapses these states to surface the most pertinent memories, allowing KALA to make associative leaps that traditional retrieval systems cannot.',
-        role: 'Relevance & association layer'
+        name: 'Context-Aware Relevance',
+        description: 'Memory retrieval is weighted by contextual relevance, surfacing the most pertinent historical data, inspection patterns, and maintenance outcomes for each decision point.',
+        role: 'Relevance & prioritization'
       }
     ]
   },
   capabilities: [
-    'Immutable ethical reasoning that cannot be jailbroken or prompt-injected past',
-    'Persistent cross-session memory with full context preservation',
-    'Self-similar knowledge organization that scales without degradation',
-    'Quantum-inspired associative retrieval for creative problem solving',
-    'Transparent decision audit trails tied to ethics kernel evaluation',
-    'Fractal compression enabling massive knowledge bases in compact form'
+    'Transparent recommendations with full reasoning audit trails',
+    'Predictive maintenance prioritization based on inspection and condition data',
+    'Anomaly detection across inspection records and operational patterns',
+    'Explainable AI decisions that meet regulatory scrutiny',
+    'Persistent learning that improves recommendations over time',
+    'Auditable decision logs tied to ethics kernel validation'
   ],
   status: 'Research & Development'
 };
@@ -156,10 +318,13 @@ export const KALA = {
 export const FOOTER_LINKS = {
   product: [
     { label: 'Saelix Slate', href: '/saelix-slate' },
-    { label: 'KALA', href: '/kala' }
+    { label: 'KALA AI Lab', href: '/kala' }
+  ],
+  solutions: [
+    { label: 'Water Utilities', href: '/solutions-water' },
+    { label: 'Municipalities', href: '/solutions-municipalities' }
   ],
   company: [
-    { label: 'About', href: '#' },
     { label: 'Contact', href: `mailto:${COMPANY_INFO.contactEmail}` }
   ],
   legal: [

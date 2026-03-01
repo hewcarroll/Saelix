@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Shield, Eye, Layers, QrCode, Hexagon, Atom, Check, ArrowRight } from 'lucide-react';
+import { Brain, Shield, Eye, Layers, Database, Check, ArrowRight, TrendingUp, Search, MessageSquare } from 'lucide-react';
 import { KALA } from '../constants';
 import { PageView } from '../types';
 
@@ -17,9 +17,9 @@ const Kala: React.FC<KalaProps> = ({ setPage }) => {
   ];
 
   const memoryIcons: Record<string, React.ReactNode> = {
-    'Nested QR Code Encoding': <QrCode size={28} />,
-    'Golden Ratio Fractal Indexing': <Hexagon size={28} />,
-    'Quantum Probability Bias': <Atom size={28} />,
+    'Structured Knowledge Encoding': <Database size={28} />,
+    'Scalable Pattern Indexing': <Layers size={28} />,
+    'Context-Aware Relevance': <Brain size={28} />,
   };
 
   return (
@@ -38,10 +38,40 @@ const Kala: React.FC<KalaProps> = ({ setPage }) => {
                 </div>
               </div>
             </div>
-            <div className="kala-status-badge">Research & Development</div>
+            <div className="kala-status-badge">R&D / AI Lab</div>
             <h1 className="kala-hero-title">KALA</h1>
             <p className="kala-hero-fullname">{KALA.fullName}</p>
             <p className="kala-hero-description">{KALA.description}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* How KALA Powers Slate */}
+      <section className="kala-powers-section">
+        <div className="container">
+          <h2 className="section-title" style={{ textAlign: 'center', color: 'white' }}>How KALA Powers Saelix Slate</h2>
+          <div className="kala-powers-grid">
+            <div className="kala-powers-card">
+              <div className="kala-powers-card-icon">
+                <TrendingUp size={24} />
+              </div>
+              <h3>Predictive Maintenance</h3>
+              <p>Prioritize rehabilitation by predicting which pipe segments are most likely to fail, based on inspection history, material, age, and environmental factors.</p>
+            </div>
+            <div className="kala-powers-card">
+              <div className="kala-powers-card-icon">
+                <Search size={24} />
+              </div>
+              <h3>Anomaly Detection</h3>
+              <p>Flag unusual patterns in inspection data, work order volumes, or operational metrics before they become emergencies.</p>
+            </div>
+            <div className="kala-powers-card">
+              <div className="kala-powers-card-icon">
+                <MessageSquare size={24} />
+              </div>
+              <h3>Explainable Recommendations</h3>
+              <p>Every AI recommendation includes a clear reasoning chain so operators and regulators can understand and audit decisions.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -71,7 +101,7 @@ const Kala: React.FC<KalaProps> = ({ setPage }) => {
         </div>
       </section>
 
-      {/* Persistent Memory */}
+      {/* Adaptive Learning Architecture */}
       <section className="kala-memory-section">
         <div className="container">
           <h2 className="section-title" style={{ textAlign: 'center' }}>{KALA.persistentMemory.name}</h2>
@@ -91,36 +121,36 @@ const Kala: React.FC<KalaProps> = ({ setPage }) => {
         </div>
       </section>
 
-      {/* How It Works Together */}
+      {/* Architecture */}
       <section className="kala-architecture-section">
         <div className="container">
           <h2 className="section-title" style={{ textAlign: 'center' }}>Architecture</h2>
           <p className="section-subtitle">
-            Three layers work together to create persistent, ethical, and associative memory.
+            Four stages work together to deliver transparent, ethical, and context-aware AI recommendations.
           </p>
           <div className="kala-arch-flow">
             <div className="kala-arch-step">
-              <div className="kala-arch-icon"><QrCode size={24} /></div>
-              <div className="kala-arch-label">Encode</div>
-              <p>Knowledge compressed into nested QR structures</p>
+              <div className="kala-arch-icon"><Database size={24} /></div>
+              <div className="kala-arch-label">Capture</div>
+              <p>Operational data ingested from inspections, work orders, and GIS</p>
             </div>
             <div className="kala-arch-arrow"><ArrowRight size={20} /></div>
             <div className="kala-arch-step">
-              <div className="kala-arch-icon"><Hexagon size={24} /></div>
-              <div className="kala-arch-label">Index</div>
-              <p>Organized by golden ratio fractal patterns</p>
+              <div className="kala-arch-icon"><Layers size={24} /></div>
+              <div className="kala-arch-label">Organize</div>
+              <p>Patterns indexed across assets, time, and condition data</p>
             </div>
             <div className="kala-arch-arrow"><ArrowRight size={20} /></div>
             <div className="kala-arch-step">
-              <div className="kala-arch-icon"><Atom size={24} /></div>
-              <div className="kala-arch-label">Retrieve</div>
-              <p>Context collapses quantum probability for relevance</p>
+              <div className="kala-arch-icon"><Brain size={24} /></div>
+              <div className="kala-arch-label">Analyze</div>
+              <p>Context-aware analysis surfaces relevant insights</p>
             </div>
             <div className="kala-arch-arrow"><ArrowRight size={20} /></div>
             <div className="kala-arch-step">
               <div className="kala-arch-icon"><Shield size={24} /></div>
-              <div className="kala-arch-label">Validate</div>
-              <p>Every output filtered through the ethics kernel</p>
+              <div className="kala-arch-label">Verify</div>
+              <p>Every output validated against the ethics kernel</p>
             </div>
           </div>
         </div>
@@ -145,8 +175,8 @@ const Kala: React.FC<KalaProps> = ({ setPage }) => {
       <section className="kala-cta-section">
         <div className="container">
           <div className="kala-cta-content">
-            <h2>KALA Powers Saelix Slate</h2>
-            <p>KALA's ethical AI and persistent memory architecture are integrated into Saelix Slate's analytics and decision-support modules.</p>
+            <h2>KALA is Coming to Saelix Slate</h2>
+            <p>KALA's predictive maintenance, anomaly detection, and explainable AI capabilities are being integrated into Saelix Slate. Want to be among the first to try it?</p>
             <button className="btn btn-primary btn-lg" onClick={() => setPage('saelix-slate')}>
               Explore Saelix Slate
               <ArrowRight className="btn-icon" />

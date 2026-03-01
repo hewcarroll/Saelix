@@ -1,8 +1,19 @@
 import React from 'react';
 import { COMPANY_INFO } from '../constants';
+import { PageView } from '../types';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  setPage: (page: PageView) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ setPage }) => {
   const currentYear = new Date().getFullYear();
+
+  const handleNavClick = (e: React.MouseEvent, page: PageView) => {
+    e.preventDefault();
+    setPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <footer className="footer">
@@ -18,17 +29,25 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h5 className="footer-subheading">Product</h5>
             <ul className="footer-links">
-              <li><a href="#saelix-slate" className="footer-link">Saelix Slate</a></li>
-              <li><a href="#kala" className="footer-link">KALA</a></li>
+              <li><a href="#" onClick={(e) => handleNavClick(e, 'saelix-slate')} className="footer-link">Saelix Slate</a></li>
+              <li><a href="#" onClick={(e) => handleNavClick(e, 'kala')} className="footer-link">KALA AI Lab</a></li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Solutions */}
           <div className="footer-section">
-            <h5 className="footer-subheading">Company</h5>
+            <h5 className="footer-subheading">Solutions</h5>
             <ul className="footer-links">
-              <li><a href="#about" className="footer-link">About</a></li>
-              <li><a href={`mailto:${COMPANY_INFO.contactEmail}`} className="footer-link">Contact</a></li>
+              <li><a href="#" onClick={(e) => handleNavClick(e, 'solutions-water')} className="footer-link">Water Utilities</a></li>
+              <li><a href="#" onClick={(e) => handleNavClick(e, 'solutions-municipalities')} className="footer-link">Municipalities</a></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="footer-section">
+            <h5 className="footer-subheading">Contact</h5>
+            <ul className="footer-links">
+              <li><a href={`mailto:${COMPANY_INFO.contactEmail}`} className="footer-link">{COMPANY_INFO.contactEmail}</a></li>
             </ul>
           </div>
 
@@ -36,8 +55,8 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h5 className="footer-subheading">Legal</h5>
             <ul className="footer-links">
-              <li><a href="#privacy" className="footer-link">Privacy Policy</a></li>
-              <li><a href="#terms" className="footer-link">Terms of Service</a></li>
+              <li><a href="#" onClick={(e) => e.preventDefault()} className="footer-link">Privacy Policy</a></li>
+              <li><a href="#" onClick={(e) => e.preventDefault()} className="footer-link">Terms of Service</a></li>
             </ul>
           </div>
         </div>

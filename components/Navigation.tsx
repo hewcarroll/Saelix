@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Play } from 'lucide-react';
+import { Menu, X, Play, ChevronDown } from 'lucide-react';
 import { PageView } from '../types';
 
 interface NavigationProps {
@@ -10,19 +10,15 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({ currentPage, setPage }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const navItems: { label: string; page: PageView }[] = [
-    { label: 'Home', page: 'home' },
-    { label: 'Saelix Slate', page: 'saelix-slate' },
-    { label: 'KALA', page: 'kala' }
-  ];
-
   const handleNavClick = (page: PageView) => {
     setPage(page);
     setIsMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Hide navigation on demo page (demo has its own nav)
   if (currentPage === 'demo') return null;
+
+  const isSolutionPage = currentPage === 'solutions-water' || currentPage === 'solutions-municipalities';
 
   return (
     <nav className="navbar">
@@ -40,15 +36,38 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, setPage }) => {
 
         {/* Desktop Navigation */}
         <div className="nav-links-desktop">
-          {navItems.map((item) => (
-            <button
-              key={item.page}
-              className={`nav-link ${currentPage === item.page ? 'active' : ''}`}
-              onClick={() => handleNavClick(item.page)}
-            >
-              {item.label}
+          <button
+            className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
+            onClick={() => handleNavClick('home')}
+          >
+            Home
+          </button>
+          <button
+            className={`nav-link ${currentPage === 'saelix-slate' ? 'active' : ''}`}
+            onClick={() => handleNavClick('saelix-slate')}
+          >
+            Saelix Slate
+          </button>
+          <div className="nav-dropdown">
+            <button className={`nav-link ${isSolutionPage ? 'active' : ''}`}>
+              Solutions
+              <ChevronDown size={14} />
             </button>
-          ))}
+            <div className="nav-dropdown-menu">
+              <button className="nav-dropdown-item" onClick={() => handleNavClick('solutions-water')}>
+                Water Utilities
+              </button>
+              <button className="nav-dropdown-item" onClick={() => handleNavClick('solutions-municipalities')}>
+                Municipalities
+              </button>
+            </div>
+          </div>
+          <button
+            className={`nav-link ${currentPage === 'kala' ? 'active' : ''}`}
+            onClick={() => handleNavClick('kala')}
+          >
+            AI Lab
+          </button>
           <button
             className="btn btn-primary btn-nav-demo"
             onClick={() => handleNavClick('demo')}
@@ -71,15 +90,36 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, setPage }) => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="nav-links-mobile">
-          {navItems.map((item) => (
-            <button
-              key={item.page}
-              className={`nav-link-mobile ${currentPage === item.page ? 'active' : ''}`}
-              onClick={() => handleNavClick(item.page)}
-            >
-              {item.label}
-            </button>
-          ))}
+          <button
+            className={`nav-link-mobile ${currentPage === 'home' ? 'active' : ''}`}
+            onClick={() => handleNavClick('home')}
+          >
+            Home
+          </button>
+          <button
+            className={`nav-link-mobile ${currentPage === 'saelix-slate' ? 'active' : ''}`}
+            onClick={() => handleNavClick('saelix-slate')}
+          >
+            Saelix Slate
+          </button>
+          <button
+            className={`nav-link-mobile ${currentPage === 'solutions-water' ? 'active' : ''}`}
+            onClick={() => handleNavClick('solutions-water')}
+          >
+            Water Utilities
+          </button>
+          <button
+            className={`nav-link-mobile ${currentPage === 'solutions-municipalities' ? 'active' : ''}`}
+            onClick={() => handleNavClick('solutions-municipalities')}
+          >
+            Municipalities
+          </button>
+          <button
+            className={`nav-link-mobile ${currentPage === 'kala' ? 'active' : ''}`}
+            onClick={() => handleNavClick('kala')}
+          >
+            AI Lab
+          </button>
           <button
             className="btn btn-primary"
             onClick={() => handleNavClick('demo')}
