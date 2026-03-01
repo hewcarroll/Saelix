@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Play, MapPin, Zap, Users, BarChart3, ClipboardCheck, Calendar, Package, FileText, Brain, Check, TrendingUp, Search, MessageSquare } from 'lucide-react';
-import { SAELIX_SLATE, PRODUCT_MODULES, KALA, WHY_UTILITIES_CHOOSE, GUIDED_DEMO_STEPS } from '../constants';
+import { SAELIX_SLATE, PRODUCT_MODULES, KALA, WHY_UTILITIES_CHOOSE, GUIDED_DEMO_STEPS, CASE_STUDY } from '../constants';
 import { PageView } from '../types';
 import ContactForm from '../components/ContactForm';
 
@@ -202,6 +202,26 @@ const Home: React.FC<HomeProps> = ({ setPage }) => {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Case Study */}
+      <section className="case-study-section">
+        <div className="container">
+          <h2 className="section-title" style={{ textAlign: 'center' }}>{CASE_STUDY.headline}</h2>
+          <p className="case-study-summary">{CASE_STUDY.summary}</p>
+          <div className="case-study-results">
+            {CASE_STUDY.results.map((result, index) => (
+              <div key={index} className="case-study-result">
+                <div className="case-study-metric">{result.metric}</div>
+                <div className="case-study-label">{result.label}</div>
+              </div>
+            ))}
+          </div>
+          <blockquote className="case-study-quote">
+            <p>"{CASE_STUDY.quote}"</p>
+            <cite>— {CASE_STUDY.attribution}</cite>
+          </blockquote>
         </div>
       </section>
 
