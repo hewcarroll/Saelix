@@ -139,18 +139,6 @@ export const WHY_UTILITIES_CHOOSE = [
   'Built by operators and engineers who have worked with CCTV, NASSCO, and GIS in the field'
 ];
 
-export const CASE_STUDY = {
-  headline: 'How a 500-Mile System Cut Unplanned Truck Rolls by 30%',
-  summary: 'A mid-sized municipal water utility managing over 500 miles of sewer and stormwater pipe was drowning in disconnected systems — GIS in one tool, inspections in another, work orders on paper. Crews were dispatched reactively, often rolling trucks to sites that had already been addressed or lacked the right parts.',
-  results: [
-    { metric: '30%', label: 'Reduction in unplanned truck rolls' },
-    { metric: '60%', label: 'Faster inspection-to-work-order cycle' },
-    { metric: '4 hrs/week', label: 'Saved on compliance reporting' }
-  ],
-  quote: 'We stopped re-keying the same data into three different systems. Now an inspection finding becomes a work order in one click, and the right crew shows up with the right parts.',
-  attribution: 'Collections System Manager'
-};
-
 export const GUIDED_DEMO_STEPS = [
   { step: 1, action: 'Open the GIS Map', description: 'See your infrastructure assets on an interactive map' },
   { step: 2, action: 'Select a pipe segment', description: 'View condition data, inspection history, and linked work orders' },
